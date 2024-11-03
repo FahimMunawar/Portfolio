@@ -1,0 +1,18 @@
+:root {
+  /* Colours */
+  --color-text: #fff;
+  --color-primary: #576cbc;
+  --color-secondary: #19376d;
+  --color-dark: #0b2447;
+  --color-bg: #04152d;
+
+  /* Fonts */
+  --font-roboto: "Roboto";
+}
+.historyItemDetails ul {
+  list-style-type: disc; /* Or any desired bullet style */
+  padding-left: 0px; /* Adjust for indent */
+  white-space: nowrap; /* Prevents text from wrapping */
+  overflow: clip; /* Hides overflow */
+  text-overflow: ellipsis; /* Adds "..." for overflowed text */
+}

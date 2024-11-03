@@ -1,0 +1,34 @@
+[
+  {
+    "role": "DevOps Engineer",
+    "organisation": "Exos Systems",
+    "startDate": "November, 2023",
+    "endDate": "Present",
+    "experiences": ["Collaborate with the whole team to automate, monitor, and enhance the infrastructure.", 
+    "Integrated Azure Key Vault for secure secrets management, ensuring compliance with security best practices across deployments.", 
+    "Contribute to system and network monitoring, troubleshooting, and security enhancements."],
+    "imageSrc": "history/exos.png"
+  },
+  {
+    "role": "DevOps Engineer",
+    "organisation": "Qubitech Solutions",
+    "startDate": "July, 2022",
+    "endDate": "December, 2022",
+    "experiences": [
+      "Streamlined deployment workflows by setting up CI/CD pipelines using GitHub Actions",
+      "Leveraged Terraform and Kubernetes to create scalable, automated infrastructure, improving resource management and deployment.",
+      "Work on scripting and automation to streamline deployment processes."
+    ],
+    "imageSrc": "history/qubitech.png"
+  },
+  {
+    "role": "Product Development & Research",
+    "organisation": "Qubitech Solutions",
+    "startDate": "June, 2021",
+    "endDate": "June, 2022",
+    "experiences": ["Engage with clients to get for requirement analysis to determine the needs and expectations of a new product.",
+    "Managing the Software & Design team together to streamline the production process to meet the timeline.",
+    "Testing the prototype of the software to see the functionality & usability of the product before delivery."],
+    "imageSrc": "history/qubitech.png"
+  }
+]
