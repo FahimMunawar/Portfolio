@@ -1,0 +1,20 @@
+[
+  {
+    "title": "AWS Certified Solutions Architect – Associate",
+    "issuer": "Amazon Web Services",
+    "date": "Apr 2026",
+    "description": "Validates the ability to design resilient, high-performing, secure, and cost-optimized architectures on AWS using core compute, storage, networking, and database services."
+  },
+  {
+    "title": "AWS Certified CloudOps Engineer – Associate",
+    "issuer": "Amazon Web Services",
+    "date": "Apr 2026",
+    "description": "Demonstrates expertise in deploying, managing, monitoring, and automating operations on AWS, including incident response, high availability, and cost and performance optimization."
+  },
+  {
+    "title": "AWS Certified Data Engineer – Associate",
+    "issuer": "Amazon Web Services",
+    "date": "Jun 2026",
+    "description": "Confirms skills in designing and operating data pipelines, ingestion, transformation, storage, and governance using AWS data and analytics services."
+  }
+]

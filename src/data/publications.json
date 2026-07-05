@@ -1,0 +1,58 @@
+[
+  {
+    "authors": "Md. Munawar Hossain, Md. Rabiul Islam, Md. Faysal Ahamed, Mominul Ahsan, Julfikar Haider",
+    "year": "2024",
+    "title": "A Collaborative Federated Learning Framework for Lung and Colon Cancer Classifications",
+    "venue": "Technologies",
+    "type": "Journal",
+    "url": "https://www.mdpi.com/2227-7080/12/9/151"
+  },
+  {
+    "authors": "Md. Faysal Ahamed, Md. Munawar Hossain, Mekhala Mariam Mary, Md. Rabiul Islam",
+    "year": "2024",
+    "title": "Optimizing Skin Lesion Segmentation with UNet and Attention-Guidance Utilizing Test Time Augmentation",
+    "venue": "6th International Conference on Electrical Engineering and Information & Communication Technology (ICEEICT)",
+    "type": "Conference",
+    "url": "https://ieeexplore.ieee.org/abstract/document/10534522"
+  },
+  {
+    "authors": "Md Munawar Hossain, Md Faysal Ahamed, Md Robiul Islam, M. D. Rafi Imam",
+    "year": "2023",
+    "title": "Privacy Preserving Federated Learning for Lung Cancer Classification",
+    "venue": "26th International Conference on Computer and Information Technology (ICCIT)",
+    "type": "Conference",
+    "url": "https://ieeexplore.ieee.org/abstract/document/10441464"
+  },
+  {
+    "authors": "Md Faysal Ahamed, Md Munawar Hossain, Md Nahiduzzaman, Md Rabiul Islam, Md Robiul Islam, Mominul Ahsan, Julfikar Haider",
+    "year": "2023",
+    "title": "A review on brain tumor segmentation based on deep learning methods with federated learning techniques",
+    "venue": "Computerized Medical Imaging and Graphics",
+    "type": "Journal",
+    "url": "https://www.sciencedirect.com/science/article/pii/S0895611123001313"
+  },
+  {
+    "authors": "M. D. Rafi Imam, Oishi Jyoti, Zakia Afrin, Md Munawar Hossain, Tamanna Hossain Mou",
+    "year": "2023",
+    "title": "Suicidal Thought Detection Using NLP (Natural Language Processing) on Reddit Data",
+    "venue": "10th IEEE International Conference on Power Systems (ICPS)",
+    "type": "Conference",
+    "url": "https://ieeexplore.ieee.org/abstract/document/10441163"
+  },
+  {
+    "authors": "Oishi Jyoti, Md Munawar Hossain, Emama Nahid, Md Abu Ismail Siddique",
+    "year": "2023",
+    "title": "Comparative Analysis of Machine Learning Algorithms for Transmission Line Fault Detection",
+    "venue": "10th IEEE International Conference on Power Systems (ICPS)",
+    "type": "Conference",
+    "url": "https://ieeexplore.ieee.org/abstract/document/10428812"
+  },
+  {
+    "authors": "Oishi Jyoti, Hafsa Binte Kibria, Md Munawar Hossain",
+    "year": "2023",
+    "title": "A Machine Learning Approach for Distribution Transformer Fault Detection",
+    "venue": "10th IEEE International Conference on Power Systems (ICPS)",
+    "type": "Conference",
+    "url": "https://ieeexplore.ieee.org/abstract/document/10428807"
+  }
+]

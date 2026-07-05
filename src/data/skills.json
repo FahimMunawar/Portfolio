@@ -1,30 +1,42 @@
 [
   {
-    "title": "HTML",
-    "imageSrc": "skills/html.png"
+    "category": "Cloud Platforms",
+    "icon": "☁️",
+    "items": ["AWS", "Microsoft Azure", "Google Cloud (GCP)", "EC2 · ECS · EKS", "S3 · RDS · Lambda", "VPC · IAM · Route 53"]
   },
   {
-    "title": "CSS",
-    "imageSrc": "skills/css.png"
+    "category": "IaC & Config",
+    "icon": "🧱",
+    "items": ["Terraform", "AWS CloudFormation", "Ansible", "Helm"]
   },
   {
-    "title": "React",
-    "imageSrc": "skills/react.png"
+    "category": "Containers & Orchestration",
+    "icon": "📦",
+    "items": ["Docker", "Kubernetes", "Amazon EKS", "Azure AKS", "ECR · ACR"]
   },
   {
-    "title": "Node",
-    "imageSrc": "skills/node.png"
+    "category": "CI/CD & Automation",
+    "icon": "⚙️",
+    "items": ["GitHub Actions", "Jenkins", "AWS CodePipeline", "CodeBuild · CodeDeploy", "GitLab CI"]
   },
   {
-    "title": "GraphQL",
-    "imageSrc": "skills/graphql.png"
+    "category": "Monitoring & Observability",
+    "icon": "📊",
+    "items": ["Datadog", "Prometheus", "Grafana", "EFK Stack", "CloudWatch"]
   },
   {
-    "title": "MongoDB",
-    "imageSrc": "skills/mongodb.png"
+    "category": "Databases",
+    "icon": "🗄️",
+    "items": ["MySQL", "PostgreSQL", "MongoDB", "Amazon RDS"]
   },
   {
-    "title": "Figma",
-    "imageSrc": "skills/figma.png"
+    "category": "Networking & Security",
+    "icon": "🔐",
+    "items": ["VPC Design", "Load Balancers (ALB/NLB)", "Security Groups", "IAM Policies", "TLS/SSL · Secrets"]
+  },
+  {
+    "category": "Languages & Scripting",
+    "icon": "💻",
+    "items": ["Python", "Bash", "C++", "Ruby (Rails)", "YAML", "SQL"]
   }
 ]

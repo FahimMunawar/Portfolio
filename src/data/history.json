@@ -1,34 +1,38 @@
 [
   {
-    "role": "DevOps Engineer",
-    "organisation": "Exos Systems",
-    "startDate": "November, 2023",
+    "role": "DevOps Engineer II",
+    "organisation": "Brain Station 23",
+    "startDate": "Nov 2025",
     "endDate": "Present",
-    "experiences": ["Collaborate with the whole team to automate, monitor, and enhance the infrastructure.", 
-    "Integrated Azure Key Vault for secure secrets management, ensuring compliance with security best practices across deployments.", 
-    "Contribute to system and network monitoring, troubleshooting, and security enhancements."],
-    "imageSrc": "history/exos.png"
+    "experiences": [
+      "Work directly with clients to diagnose reliability and scaling challenges and deliver tailored cloud and infrastructure solutions.",
+      "Partnered on-site with an agri-fintech client to improve the reliability of a Ruby on Rails application on AWS under high-traffic event spikes.",
+      "Optimized an EC2-based system and delivered a full migration and CI/CD plan targeting Amazon EKS for scalability and resilience.",
+      "Drove AWS cost optimization by right-sizing compute, eliminating idle infrastructure, and restructuring architectures to reduce monthly spend."
+    ]
   },
   {
     "role": "DevOps Engineer",
-    "organisation": "Qubitech Solutions",
-    "startDate": "July, 2022",
-    "endDate": "December, 2022",
+    "organisation": "Hubar Tech Limited",
+    "startDate": "Nov 2023",
+    "endDate": "Aug 2025",
     "experiences": [
-      "Streamlined deployment workflows by setting up CI/CD pipelines using GitHub Actions",
-      "Leveraged Terraform and Kubernetes to create scalable, automated infrastructure, improving resource management and deployment.",
-      "Work on scripting and automation to streamline deployment processes."
-    ],
-    "imageSrc": "history/qubitech.png"
+      "Built CI/CD pipelines with GitHub Actions to automate build, test, and deployment for faster, more reliable delivery.",
+      "Provisioned and managed cloud infrastructure on Microsoft Azure using Terraform across multiple environments.",
+      "Deployed containerized applications with Docker and orchestrated them on Kubernetes for high availability.",
+      "Contributed to monitoring with Prometheus and Grafana and implemented security best practices."
+    ]
   },
   {
-    "role": "Product Development & Research",
+    "role": "Junior DevOps Engineer & Software Engineer",
     "organisation": "Qubitech Solutions",
-    "startDate": "June, 2021",
-    "endDate": "June, 2022",
-    "experiences": ["Engage with clients to get for requirement analysis to determine the needs and expectations of a new product.",
-    "Managing the Software & Design team together to streamline the production process to meet the timeline.",
-    "Testing the prototype of the software to see the functionality & usability of the product before delivery."],
-    "imageSrc": "history/qubitech.png"
+    "startDate": "Nov 2022",
+    "endDate": "Oct 2023",
+    "experiences": [
+      "Designed and maintained CI/CD pipelines using AWS CodePipeline, CodeBuild, and CodeDeploy.",
+      "Containerized and orchestrated applications with Amazon EKS and Docker for consistent environments.",
+      "Set up Grafana and Prometheus for real-time monitoring, visualization, and alerting.",
+      "Contributed to backend development with Python and Flask, building RESTful APIs integrated with cloud infrastructure."
+    ]
   }
 ]

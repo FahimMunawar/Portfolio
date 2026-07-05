@@ -1,92 +1,90 @@
 @import "../../vars.css";
 
 .container {
-  position: relative;
-  background-color: rgba(12, 12, 12, 0.6);
-  border-radius: 15px;
-  padding: 73px;
-  margin-top: 129px;
-  z-index: 1;
-  margin-left: 10%;
-  margin-right: 10%;
+  padding: var(--section-gap) var(--page-margin) 0;
+  scroll-margin-top: 5rem;
 }
 
-.title {
-  color: var(--color-text);
-  font-size: 35px;
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.6vw, 2.8rem);
   font-weight: 700;
-  letter-spacing: 1.75px;
-  text-transform: uppercase;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  max-width: 20ch;
+  margin: 1rem 0 2.5rem;
 }
 
-.content {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  margin-bottom: 3rem;
 }
 
-.aboutImage {
-  width: 35%;
-}
-
-.aboutItems {
+.lead {
+  font-size: 1.2rem;
+  line-height: 1.7;
   color: var(--color-text);
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
 }
 
-.aboutItem {
+.body {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--color-text-muted);
+}
+
+.eduCard {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  border-radius: 20px;
-  list-style: none;
-  padding: 25px;
-  background-image: linear-gradient(
-    90deg,
-    rgba(165, 215, 232, 0.42) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  background-size: 0 100%;
-  background-repeat: no-repeat;
-  transition: 0.4s;
+  gap: 1.5rem;
+  padding: 1.8rem 2rem;
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  transition: var(--transition);
 }
 
-.aboutItem:hover {
-  background-size: 100% 100%;
+.eduCard:hover {
+  border-color: var(--color-border-strong);
+  background: var(--color-surface-strong);
 }
 
-.aboutItem h3 {
-  font-size: 25px;
+.eduIcon {
+  display: grid;
+  place-items: center;
+  min-width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  font-size: 1.8rem;
+  background: var(--gradient-accent);
+}
+
+.eduDetails h3 {
+  font-size: 1.25rem;
   font-weight: 600;
+  margin-bottom: 0.3rem;
 }
 
-.aboutItem p {
-  font-size: 25px;
+.eduOrg {
+  color: var(--color-primary);
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+
+.eduMeta {
+  color: var(--color-text-dim);
+  font-size: 0.95rem;
 }
 
 @media screen and (max-width: 830px) {
-  .container {
-    background-color: transparent;
-    padding-left: 0;
-    padding-right: 0;
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
-  .content {
+  .eduCard {
     flex-direction: column;
-  }
-
-  .aboutImage {
-    display: none;
-  }
-
-  .aboutItems {
-    margin-top: 29px;
-  }
-
-  .aboutItem {
-    padding-left: 0;
-    padding-right: 0;
+    text-align: center;
   }
 }

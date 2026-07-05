@@ -1,18 +1,39 @@
 :root {
-  /* Colours */
-  --color-text: #fff;
-  --color-primary: #576cbc;
-  --color-secondary: #19376d;
-  --color-dark: #0b2447;
-  --color-bg: #04152d;
+  /* Core palette */
+  --color-bg: #05080f;
+  --color-bg-alt: #0a1120;
+  --color-surface: rgba(255, 255, 255, 0.04);
+  --color-surface-strong: rgba(255, 255, 255, 0.07);
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-border-strong: rgba(255, 255, 255, 0.18);
+
+  /* Text */
+  --color-text: #f5f7fb;
+  --color-text-muted: #9aa7bd;
+  --color-text-dim: #6b7890;
+
+  /* Accents */
+  --color-primary: #38bdf8;
+  --color-secondary: #6366f1;
+  --color-accent: #22d3ee;
+  --gradient-accent: linear-gradient(120deg, #38bdf8 0%, #6366f1 60%, #a855f7 100%);
+  --gradient-text: linear-gradient(120deg, #e0f2fe 0%, #93c5fd 45%, #c4b5fd 100%);
+  --glow-primary: rgba(56, 189, 248, 0.35);
 
   /* Fonts */
+  --font-display: "Outfit", "Roboto", sans-serif;
+  --font-body: "Outfit", Arial, Helvetica, sans-serif;
   --font-roboto: "Roboto";
-}
-.historyItemDetails ul {
-  list-style-type: disc; /* Or any desired bullet style */
-  padding-left: 0px; /* Adjust for indent */
-  white-space: nowrap; /* Prevents text from wrapping */
-  overflow: clip; /* Hides overflow */
-  text-overflow: ellipsis; /* Adds "..." for overflowed text */
+
+  /* Layout */
+  --page-margin: clamp(1.25rem, 6vw, 8rem);
+  --section-gap: clamp(5rem, 10vw, 9rem);
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 10px;
+
+  /* Effects */
+  --shadow-soft: 0 20px 60px -20px rgba(0, 0, 0, 0.6);
+  --shadow-glow: 0 0 40px -10px var(--glow-primary);
+  --transition: 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
