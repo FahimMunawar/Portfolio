@@ -72,14 +72,6 @@ export const Hero = () => {
           alt="Portrait of Munawar Hossain"
           className={styles.heroImg}
         />
-        <div className={styles.floatCard} style={{ top: "12%", left: "-6%" }}>
-          <span className={styles.floatDot} data-color="cyan" />
-          AWS Certified
-        </div>
-        <div className={styles.floatCard} style={{ bottom: "10%", right: "-6%" }}>
-          <span className={styles.floatDot} data-color="violet" />
-          Kubernetes &amp; Terraform
-        </div>
       </div>
     </section>
   );

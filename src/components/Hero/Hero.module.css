@@ -193,37 +193,6 @@
   }
 }
 
-.floatCard {
-  position: absolute;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.6rem 1rem;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--color-text);
-  background: rgba(10, 16, 28, 0.8);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid var(--color-border);
-  border-radius: 14px;
-  box-shadow: var(--shadow-soft);
-  animation: floating 6s ease-in-out infinite;
-}
-
-.floatDot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-}
-.floatDot[data-color="cyan"] {
-  background: var(--color-accent);
-}
-.floatDot[data-color="violet"] {
-  background: #a855f7;
-}
-
 @media screen and (max-width: 900px) {
   .container {
     grid-template-columns: 1fr;
@@ -248,9 +217,5 @@
   .imageWrap {
     order: 1;
     margin-bottom: 1rem;
-  }
-
-  .floatCard {
-    display: none;
   }
 }
