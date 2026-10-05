@@ -1,5 +1,13 @@
 [
   {
+    "authors": "Amith Khandakar, David Michelson, Md. Munawar Hossain, Shaikh Golam Rabbani, Md. Faysal Ahamed, et al.",
+    "year": "2026",
+    "title": "A Federated Learning Approach for Scalable Road Condition Detection in Connected Vehicles",
+    "venue": "IEEE Open Journal of Intelligent Transportation Systems",
+    "type": "Journal",
+    "url": "https://ieeexplore.ieee.org/document/11421348/"
+  },
+  {
     "authors": "Md. Munawar Hossain, Md. Rabiul Islam, Md. Faysal Ahamed, Mominul Ahsan, Julfikar Haider",
     "year": "2024",
     "title": "A Collaborative Federated Learning Framework for Lung and Colon Cancer Classifications",

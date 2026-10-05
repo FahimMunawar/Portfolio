@@ -1,42 +1,109 @@
 [
   {
     "category": "Cloud Platforms",
-    "icon": "☁️",
-    "items": ["AWS", "Microsoft Azure", "Google Cloud (GCP)", "EC2 · ECS · EKS", "S3 · RDS · Lambda", "VPC · IAM · Route 53"]
+    "items": [
+      "AWS",
+      "Microsoft Azure",
+      "Google Cloud (GCP)",
+      "EC2 · ECS · EKS",
+      "S3 · RDS · Lambda",
+      "VPC · IAM · Route 53",
+      "ALB/NLB · CloudWatch",
+      "Azure AKS · APIM · Key Vault"
+    ]
   },
   {
     "category": "IaC & Config",
-    "icon": "🧱",
-    "items": ["Terraform", "AWS CloudFormation", "Ansible", "Helm"]
+    "items": [
+      "Terraform",
+      "AWS CloudFormation",
+      "Ansible",
+      "Helm"
+    ]
   },
   {
     "category": "Containers & Orchestration",
-    "icon": "📦",
-    "items": ["Docker", "Kubernetes", "Amazon EKS", "Azure AKS", "ECR · ACR"]
+    "items": [
+      "Docker",
+      "Kubernetes",
+      "Amazon EKS",
+      "Azure AKS",
+      "ECR · ACR"
+    ]
   },
   {
     "category": "CI/CD & Automation",
-    "icon": "⚙️",
-    "items": ["GitHub Actions", "Jenkins", "AWS CodePipeline", "CodeBuild · CodeDeploy", "GitLab CI"]
+    "items": [
+      "GitHub Actions",
+      "Jenkins",
+      "AWS CodePipeline",
+      "CodeBuild · CodeDeploy",
+      "Maven",
+      "GitLab CI"
+    ]
   },
   {
     "category": "Monitoring & Observability",
-    "icon": "📊",
-    "items": ["Datadog", "Prometheus", "Grafana", "EFK Stack", "CloudWatch"]
+    "items": [
+      "Datadog",
+      "Prometheus",
+      "Grafana",
+      "EFK Stack",
+      "CloudWatch · Container Insights",
+      "Alerting"
+    ]
   },
   {
     "category": "Databases",
-    "icon": "🗄️",
-    "items": ["MySQL", "PostgreSQL", "MongoDB", "Amazon RDS"]
+    "items": [
+      "MySQL",
+      "PostgreSQL",
+      "MongoDB",
+      "Amazon RDS"
+    ]
   },
   {
     "category": "Networking & Security",
-    "icon": "🔐",
-    "items": ["VPC Design", "Load Balancers (ALB/NLB)", "Security Groups", "IAM Policies", "TLS/SSL · Secrets"]
+    "items": [
+      "VPC Design",
+      "Subnets",
+      "Load Balancers (ALB/NLB)",
+      "Security Groups",
+      "IAM Policies",
+      "Secrets Management",
+      "TLS/SSL",
+      "Cost Optimization"
+    ]
   },
   {
     "category": "Languages & Scripting",
-    "icon": "💻",
-    "items": ["Python", "Bash", "C++", "Ruby (Rails)", "YAML", "SQL"]
+    "items": [
+      "Python",
+      "Bash",
+      "C++",
+      "Ruby (Rails)",
+      "YAML",
+      "SQL"
+    ]
+  },
+  {
+    "category": "Operating Systems",
+    "items": [
+      "Linux Administration",
+      "Ubuntu",
+      "CentOS",
+      "Amazon Linux",
+      "Shell scripting"
+    ]
+  },
+  {
+    "category": "Version Control & Collaboration",
+    "items": [
+      "Git",
+      "GitHub",
+      "GitLab",
+      "Branching & PR workflows",
+      "Agile/Scrum"
+    ]
   }
 ]

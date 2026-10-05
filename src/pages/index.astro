@@ -1,0 +1,518 @@
+---
+import { Image } from "astro:assets";
+
+import FluidInk from "../components/FluidInk.astro";
+import JobList from "../components/JobList.astro";
+import SectionHead from "../components/SectionHead.astro";
+import Publications from "../components/Publications.astro";
+import Certs from "../components/Certs.astro";
+import Stack from "../components/Stack.astro";
+import DevopsLoop from "../components/DevopsLoop.astro";
+import PipelineStrip from "../components/PipelineStrip.astro";
+import DevDesk from "../components/DevDesk.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import profile from "../assets/profile.jpeg";
+import pubs from "../data/publications.json";
+import { CV_URL, INK, SITE, SOCIAL } from "../config";
+
+const stats = [
+  { n: 4, suffix: "+", label: "Years in DevOps" },
+  { n: 3, suffix: "", label: "AWS certifications" },
+  { n: pubs.length, suffix: "", label: "Research papers" },
+];
+---
+
+<BaseLayout overlayHeader>
+  <FluidInk variant="hero" enabled={INK.hero}>
+    <div class="hero">
+      <p class="hero__eyebrow">Cloud &amp; DevOps · AI/ML Research</p>
+      <h1 class="hero__title">{SITE.title}</h1>
+      <p class="hero__lede">
+        I build scalable, cost-optimized cloud infrastructure on AWS, Azure and
+        Kubernetes — and research federated learning.
+      </p>
+      <p class="hero__prompt prompt" aria-label="Terminal">
+        <span id="typed">kubectl get pods --all-namespaces</span><span
+          class="cursor"
+          aria-hidden="true"></span>
+      </p>
+      <p class="hero__cta">
+        <a class="btn" href="#about">Explore ↓</a>
+        <a class="btn btn--ghost" href={CV_URL} target="_blank" rel="noopener">
+          Download CV
+        </a>
+      </p>
+    </div>
+
+    {
+      SITE.titleMark && (
+        <p class="hero__rail tategaki" aria-hidden="true">
+          墨と水 — INK IN WATER
+        </p>
+      )
+    }
+
+    {
+      INK.hero && (
+        <p class="hero__notes" aria-hidden="true">
+          <span>Available for Ph.D. &amp; research collaboration</span>
+          <span class="hero__notes-mid">Scroll ↓</span>
+          <span>Move — stir the ink</span>
+        </p>
+      )
+    }
+  </FluidInk>
+
+  <section id="about" class="section wrap">
+    <SectionHead index="01" title="About" />
+    <div class="who">
+      <figure class="who__photo reveal">
+        <Image
+          src={profile}
+          alt="Portrait of Munawar Hossain"
+          widths={[320, 640]}
+          sizes="(max-width: 50rem) 80vw, 320px"
+        />
+      </figure>
+
+      <div class="who__text reveal">
+        <p class="status status--live">Open to Ph.D. &amp; research collaboration</p>
+        <div class="who__bio">
+          <p>
+            I'm a Cloud and DevOps Engineer who pairs deep expertise in AWS,
+            Azure, Kubernetes and CI/CD automation with an AI-driven
+            engineering mindset, using AI-assisted development and intelligent
+            tooling to ship reliable software faster. I design scalable,
+            cost-optimized cloud architectures, automate infrastructure with
+            Terraform and containers, and build observability into every layer
+            of the stack.
+          </p>
+          <p>
+            Backed by an AI/ML research foundation in deep and federated
+            learning, I blend strong systems engineering with a data-informed,
+            automation-first approach — and I'm now looking to pursue a Ph.D.
+            to take this research further.
+          </p>
+        </div>
+        <dl class="kv who__edu">
+          <dt>education</dt>
+          <dd>B.Sc. Electrical &amp; Computer Engineering</dd>
+          <dt>university</dt>
+          <dd>Rajshahi University of Engineering &amp; Technology</dd>
+          <dt>period</dt>
+          <dd>Jan 2018 – Sep 2023</dd>
+          <dt>cgpa</dt>
+          <dd>3.32 / 4.00 (3.7 in the last 4 semesters)</dd>
+        </dl>
+      </div>
+    </div>
+
+    <div class="act">
+      <ul class="stats">
+        {
+          stats.map((s) => (
+            <li class="stat reveal">
+              <span class="stat__n" data-count={s.n} data-suffix={s.suffix}>
+                {s.n}{s.suffix}
+              </span>
+              <span class="label">{s.label}</span>
+            </li>
+          ))
+        }
+      </ul>
+      <div class="act__art reveal"><DevDesk /></div>
+    </div>
+  </section>
+
+  <section id="experience" class="section wrap">
+    <SectionHead index="02" title="Experience" />
+    <JobList detailed />
+  </section>
+
+  <section id="how-i-ship" class="section wrap">
+    <SectionHead index="03" title="How I ship" />
+    <div class="ship">
+      <p class="lede ship__lede">
+        Everything I build runs the same loop: plan, code, build, test, release,
+        deploy, operate, monitor — automated end to end, observable at every
+        step, and tuned for cost.
+      </p>
+      <div class="reveal"><DevopsLoop /></div>
+      <div class="reveal ship__pipe">
+        <p class="label ship__cap">$ cat .github/workflows/deploy.yml</p>
+        <PipelineStrip />
+      </div>
+    </div>
+  </section>
+
+  {
+    INK.divider && (
+      <FluidInk variant="divider" strength={INK.strength * 0.7}>
+        <p class="divider__label label">$ terraform apply — ink and infrastructure</p>
+      </FluidInk>
+    )
+  }
+
+  <section id="stack" class="section wrap">
+    <SectionHead index="04" title="Stack" />
+    <div class="gap"><Stack /></div>
+  </section>
+
+  <section id="certifications" class="section wrap">
+    <SectionHead index="05" title="Certifications" />
+    <div class="gap"><Certs /></div>
+  </section>
+
+  <section id="research" class="section wrap">
+    <SectionHead index="06" title="Research" />
+    <p class="lede research__lede">
+      Deep and federated learning for medical imaging, plus applied ML for power
+      systems and NLP.
+      <a href={SOCIAL.find((l) => l.label === "Scholar")?.href} target="_blank" rel="noopener noreferrer">Google Scholar ↗</a>
+    </p>
+    <Publications limit={3} />
+    <details class="more">
+      <summary class="btn btn--ghost">
+        <span class="more__open">Show all {pubs.length} papers ↓</span>
+        <span class="more__close">Show fewer ↑</span>
+      </summary>
+      <Publications from={3} />
+    </details>
+  </section>
+
+  <section id="contact" class="section wrap contact">
+    <p class="eyebrow">$ mail</p>
+    <h2 class="contact__title">Let's build something together.</h2>
+    <p class="lede">Open to Ph.D. opportunities, research collaboration and DevOps roles.</p>
+    <p class="contact__cta">
+      <a class="btn" href="mailto:munawark7@gmail.com">munawark7@gmail.com</a>
+    </p>
+    <ul class="contact__links">
+      {SOCIAL.filter((l) => l.label !== "Email").map((l) => (
+        <li><a class="chip" href={l.href} target="_blank" rel="noopener noreferrer">{l.label}</a></li>
+      ))}
+    </ul>
+  </section>
+</BaseLayout>
+
+<script>
+  const typed = document.getElementById("typed");
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const cmds = [
+    "kubectl get pods --all-namespaces",
+    "terraform apply -auto-approve",
+    "aws sts get-caller-identity",
+    "python train_federated.py --rounds 50",
+    "gh workflow run deploy.yml",
+  ];
+
+  if (typed && !reduce) {
+    let i = 0;
+    let c = 0;
+    let del = false;
+    const tick = () => {
+      const s = cmds[i];
+      c += del ? -1 : 1;
+      typed.textContent = s.slice(0, c);
+      let wait = del ? 22 : 55 + Math.random() * 50;
+      if (!del && c === s.length) {
+        del = true;
+        wait = 1700;
+      } else if (del && c === 0) {
+        del = false;
+        i = (i + 1) % cmds.length;
+        wait = 350;
+      }
+      setTimeout(tick, wait);
+    };
+    typed.textContent = "";
+    setTimeout(tick, 600);
+  }
+
+  // Count-up stats.
+  const nums = document.querySelectorAll<HTMLElement>("[data-count]");
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) {
+      if (!e.isIntersecting) continue;
+      io.unobserve(e.target);
+      const el = e.target as HTMLElement;
+      const end = Number(el.dataset.count);
+      const suffix = el.dataset.suffix ?? "";
+      if (reduce) continue;
+      let n = 0;
+      el.textContent = "0" + suffix;
+      const step = setInterval(() => {
+        n += 1;
+        el.textContent = n + suffix;
+        if (n >= end) clearInterval(step);
+      }, 260);
+    }
+  });
+  nums.forEach((n) => io.observe(n));
+</script>
+
+<style>
+  .hero {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-6);
+    padding: var(--space-24) var(--gutter);
+    text-align: center;
+  }
+
+  .hero__eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    color: var(--color-accent);
+  }
+
+  .hero__title {
+    font-family: var(--font-mono);
+    font-size: clamp(3.5rem, 15vw, 12.5rem);
+    font-weight: 600;
+    line-height: 0.9;
+    letter-spacing: var(--tracking-hero);
+    text-transform: uppercase;
+  }
+
+  .hero__lede {
+    max-width: 34rem;
+    font-size: var(--text-md);
+    color: var(--color-fg-muted);
+  }
+
+  .hero__prompt {
+    min-height: 1.6em;
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--color-fg);
+  }
+
+  .hero__cta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-4);
+  }
+
+  .hero__rail {
+    position: absolute;
+    top: 50%;
+    right: var(--gutter);
+    translate: 0 -50%;
+  }
+
+  .hero__notes {
+    display: none;
+    position: absolute;
+    inset-inline: var(--gutter);
+    bottom: var(--space-6);
+    justify-content: space-between;
+    gap: var(--space-4);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+    color: var(--color-fg-faint);
+  }
+
+  :global(.ink:has([data-ink-active])) .hero__notes {
+    display: flex;
+  }
+
+  .who {
+    display: grid;
+    grid-template-columns: 17rem minmax(0, 1fr);
+    gap: var(--space-8);
+    align-items: start;
+    padding-top: var(--space-8);
+  }
+
+  .who__photo {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    border: var(--rule-width) solid var(--color-rule-strong);
+    border-radius: 6px;
+  }
+
+  .who__photo :global(img) {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    transition: transform 0.9s var(--ease-out);
+  }
+
+  .who__photo:hover :global(img) {
+    transform: scale(1.04);
+  }
+
+
+
+
+
+  .who__text {
+    display: grid;
+    gap: var(--space-6);
+    align-content: start;
+  }
+
+  .who__bio {
+    display: grid;
+    gap: var(--space-4);
+    font-size: var(--text-md);
+    color: var(--color-fg-muted);
+  }
+
+  .act {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: var(--space-8) var(--space-12);
+    align-items: center;
+    padding-top: var(--space-12);
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--rule-width);
+    margin: var(--space-8) 0 0;
+    padding: 0;
+    list-style: none;
+    background: var(--color-rule);
+    border: var(--rule-width) solid var(--color-rule);
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding: var(--space-8) var(--space-6);
+    background: var(--color-bg);
+  }
+
+  .stat__n {
+    font-family: var(--font-mono);
+    font-size: clamp(2.25rem, 6vw, 3.75rem);
+    font-weight: 600;
+    line-height: 1;
+    color: var(--color-accent);
+  }
+
+  .gap {
+    padding-top: var(--space-8);
+  }
+
+  .ship {
+    display: grid;
+    gap: var(--space-8);
+    padding-top: var(--space-8);
+  }
+
+  .ship__lede {
+    max-width: var(--width-prose);
+  }
+
+  .ship__cap {
+    margin-bottom: var(--space-4);
+  }
+
+  .divider__label {
+    margin: auto;
+    text-align: center;
+  }
+
+  .contact {
+    text-align: center;
+  }
+
+  .contact__title {
+    margin: var(--space-4) auto var(--space-6);
+    max-width: 22ch;
+    font-size: var(--text-2xl);
+  }
+
+  .contact .lede {
+    max-width: 32rem;
+    margin-inline: auto;
+  }
+
+  .contact__cta {
+    margin-top: var(--space-8);
+  }
+
+  .contact__links {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-2);
+    margin: var(--space-6) 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .contact__links .chip {
+    text-decoration: none;
+  }
+
+
+
+
+
+  .research__lede {
+    padding-block: var(--space-6) var(--space-2);
+    max-width: var(--width-prose);
+  }
+
+  .more {
+    margin-top: var(--space-6);
+  }
+
+  .more summary {
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .more summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .more__close,
+  .more[open] .more__open {
+    display: none;
+  }
+
+  .more[open] .more__close {
+    display: inline;
+  }
+
+  @media (max-width: 55rem) {
+    .hero__rail,
+    .hero__notes-mid {
+      display: none;
+    }
+
+    .who,
+    .act {
+      grid-template-columns: 1fr;
+    }
+
+    .who__photo {
+      max-width: 17rem;
+    }
+  }
+
+  @media (max-width: 34rem) {
+    :global(.ink:has([data-ink-active])) .hero__notes {
+      display: none;
+    }
+
+    .stats {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

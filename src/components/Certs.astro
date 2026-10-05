@@ -1,0 +1,63 @@
+---
+import certs from "../data/certifications.json";
+---
+
+<ul class="certs">
+  {
+    certs.map((c) => (
+      <li class="cert reveal">
+        <span class="cert__check" aria-hidden="true">✔</span>
+        <div>
+          <h3 class="cert__title">{c.title}</h3>
+          <p class="cert__meta label">
+            {c.issuer} · {c.date}
+          </p>
+          <p class="cert__desc">{c.description}</p>
+        </div>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  .certs {
+    display: grid;
+    gap: var(--rule-width);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background: var(--color-rule);
+    border: var(--rule-width) solid var(--color-rule);
+  }
+
+  .cert {
+    display: flex;
+    gap: var(--space-4);
+    padding: var(--space-6);
+    background: var(--color-bg);
+    transition: background var(--duration-base) var(--ease-out);
+  }
+
+  .cert:hover {
+    background: var(--color-bg-subtle);
+  }
+
+  .cert__check {
+    font-family: var(--font-mono);
+    color: var(--color-accent);
+  }
+
+  .cert__title {
+    font-size: var(--text-lg);
+  }
+
+  .cert__meta {
+    margin-top: var(--space-1);
+  }
+
+  .cert__desc {
+    margin-top: var(--space-3);
+    font-size: var(--text-sm);
+    color: var(--color-fg-muted);
+  }
+</style>

@@ -1,0 +1,109 @@
+---
+import pubs from "../data/publications.json";
+
+interface Props {
+  /** Start at this index. */
+  from?: number;
+  limit?: number;
+}
+
+const { from = 0, limit } = Astro.props;
+const list = pubs.slice(from, limit ? from + limit : undefined);
+const bold = (authors: string) =>
+  authors.split(/(Md\.? Munawar Hossain|MM Hossain)/).map((part, i) => ({
+    part,
+    me: i % 2 === 1,
+  }));
+---
+
+<ol class="pubs">
+  {
+    list.map((p) => (
+      <li class="pub reveal">
+        <div class="pub__meta">
+          <span class="pub__year">{p.year}</span>
+          <span class="chip pub__type">{p.type}</span>
+        </div>
+        <div>
+          <h3 class="pub__title">
+            <a href={p.url} target="_blank" rel="noopener noreferrer">
+              {p.title}
+              <span aria-hidden="true"> ↗</span>
+            </a>
+          </h3>
+          <p class="pub__authors">
+            {bold(p.authors).map((a) => (a.me ? <strong>{a.part}</strong> : a.part))}
+          </p>
+          <p class="pub__venue">{p.venue}</p>
+        </div>
+      </li>
+    ))
+  }
+</ol>
+
+<style>
+  .pubs {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .pub {
+    display: grid;
+    grid-template-columns: 8rem minmax(0, 1fr);
+    gap: var(--space-4) var(--space-8);
+    padding-block: var(--space-6);
+    border-bottom: var(--rule-width) solid var(--color-rule);
+  }
+
+  .pub__meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+
+  .pub__year {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--color-accent);
+  }
+
+  .pub__title {
+    font-size: var(--text-lg);
+  }
+
+  .pub__title a {
+    text-decoration: none;
+  }
+
+  .pub__authors {
+    margin-top: var(--space-2);
+    font-size: var(--text-sm);
+    color: var(--color-fg-muted);
+  }
+
+  .pub__authors strong {
+    color: var(--color-fg);
+    font-weight: 600;
+  }
+
+  .pub__venue {
+    margin-top: var(--space-2);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    letter-spacing: 0.04em;
+    color: var(--color-fg-faint);
+  }
+
+  @media (max-width: 40rem) {
+    .pub {
+      grid-template-columns: 1fr;
+    }
+
+    .pub__meta {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+</style>

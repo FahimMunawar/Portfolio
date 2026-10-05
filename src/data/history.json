@@ -2,13 +2,15 @@
   {
     "role": "DevOps Engineer II",
     "organisation": "Brain Station 23",
-    "startDate": "Nov 2025",
+    "startDate": "Aug 2025",
     "endDate": "Present",
     "experiences": [
-      "Work directly with clients to diagnose reliability and scaling challenges and deliver tailored cloud and infrastructure solutions.",
-      "Partnered on-site with an agri-fintech client to improve the reliability of a Ruby on Rails application on AWS under high-traffic event spikes.",
-      "Optimized an EC2-based system and delivered a full migration and CI/CD plan targeting Amazon EKS for scalability and resilience.",
-      "Drove AWS cost optimization by right-sizing compute, eliminating idle infrastructure, and restructuring architectures to reduce monthly spend."
+      "Client Engagement: Worked directly with clients to understand requirements, diagnose reliability and scaling challenges, and deliver tailored cloud and infrastructure solutions aligned with their operations.",
+      "Reliability & Scaling: Partnered on-site with an agri-fintech client to improve the reliability of a Ruby on Rails application on AWS, analyzing system load and high-traffic event spikes to handle large concurrent user loads.",
+      "Infrastructure Modernization: Optimized the existing EC2-based system and delivered a full migration and CI/CD plan targeting Amazon EKS for improved scalability, automated deployments, and operational resilience.",
+      "Cloud Cost Optimization: Drove cost optimization across multiple projects by analyzing AWS billing and usage patterns, right-sizing compute and networking resources, eliminating idle and redundant infrastructure, and restructuring architectures to reduce recurring monthly cloud spend.",
+      "Forward Deployed Engineering: Took ownership of an existing internal application, using AI-assisted development with provided project context to extend, build, and deploy new features into production.",
+      "Architecture & Documentation: Produced solution architecture diagrams and technical documentation to support design reviews and client delivery."
     ]
   },
   {
@@ -17,22 +19,24 @@
     "startDate": "Nov 2023",
     "endDate": "Aug 2025",
     "experiences": [
-      "Built CI/CD pipelines with GitHub Actions to automate build, test, and deployment for faster, more reliable delivery.",
-      "Provisioned and managed cloud infrastructure on Microsoft Azure using Terraform across multiple environments.",
-      "Deployed containerized applications with Docker and orchestrated them on Kubernetes for high availability.",
-      "Contributed to monitoring with Prometheus and Grafana and implemented security best practices."
+      "Automation: Set up CI/CD pipelines using GitHub Actions to automate build, test, and deployment processes, ensuring faster and more reliable software delivery.",
+      "Infrastructure: Provisioned and managed cloud infrastructure on Microsoft Azure, leveraging Terraform to automate resource deployments across multiple environments, enhancing scalability and consistency.",
+      "Containerization: Deployed containerized applications using Docker and orchestrated them with Kubernetes, ensuring high availability and simplified application management.",
+      "Monitoring & Security: Contributed to system and network monitoring using tools like Prometheus and Grafana, troubleshooting performance issues, and implementing security best practices to safeguard infrastructure.",
+      "Collaboration: Worked closely with development and operations teams to streamline workflows, optimize CI/CD processes, and ensure seamless integration of infrastructure and application changes."
     ]
   },
   {
     "role": "Junior DevOps Engineer & Software Engineer",
     "organisation": "Qubitech Solutions",
-    "startDate": "Nov 2022",
+    "startDate": "Oct 2022",
     "endDate": "Oct 2023",
     "experiences": [
-      "Designed and maintained CI/CD pipelines using AWS CodePipeline, CodeBuild, and CodeDeploy.",
-      "Containerized and orchestrated applications with Amazon EKS and Docker for consistent environments.",
-      "Set up Grafana and Prometheus for real-time monitoring, visualization, and alerting.",
-      "Contributed to backend development with Python and Flask, building RESTful APIs integrated with cloud infrastructure."
+      "Automation: Designed and maintained CI/CD pipelines using AWS CodePipeline, CodeBuild, and CodeDeploy to streamline build, test, and deployment workflows.",
+      "Containerization: Utilized Amazon EKS and Docker to containerize and orchestrate applications, ensuring consistent environments across development, staging, and production. Leveraged Kubernetes-native features for seamless scalability, rolling updates, and simplified deployment pipelines.",
+      "Versioning: Managed source code repositories using Git, implementing branching, merging, and pull request workflows to facilitate efficient collaboration and maintain high code quality standards.",
+      "Monitoring: Set up and configured Grafana and Prometheus for real-time monitoring, visualization, and alerting of application performance and infrastructure metrics, enabling proactive issue resolution.",
+      "Backend Development: Contributed to backend development using Python and Flask, implementing RESTful APIs and integrating services with cloud infrastructure to support application features and DevOps workflows."
     ]
   }
 ]

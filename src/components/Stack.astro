@@ -1,0 +1,58 @@
+---
+import skills from "../data/skills.json";
+---
+
+<div class="stack">
+  {
+    skills.map((group) => (
+      <section class="term reveal">
+        <div class="term__bar">
+          <span class="term__dot" />
+          <span class="term__dot" />
+          <span class="term__dot" />
+          <span class="term__title">
+            {group.category.toLowerCase().replace(/[^a-z]+/g, "-").replace(/-$/, "")}.yaml
+          </span>
+        </div>
+        <div class="stack__body">
+          <p class="stack__cat">{group.category}</p>
+          <ul class="chips">
+            {group.items.map((item) => (
+              <li class="chip">{item}</li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    ))
+  }
+</div>
+
+<style>
+  .stack {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
+    gap: var(--space-6);
+  }
+
+  .stack__body {
+    padding: var(--space-6);
+  }
+
+  .stack__cat {
+    margin-bottom: var(--space-4);
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--color-fg);
+  }
+
+  .stack .term {
+    transition:
+      border-color var(--duration-base) var(--ease-out),
+      transform var(--duration-base) var(--ease-out);
+  }
+
+  .stack .term:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-3px);
+  }
+</style>

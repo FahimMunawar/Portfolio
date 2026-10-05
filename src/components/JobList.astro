@@ -1,0 +1,134 @@
+---
+import history from "../data/history.json";
+
+interface Props {
+  /** Show the bullet points under each role. */
+  detailed?: boolean;
+}
+
+const { detailed = false } = Astro.props;
+
+/** "Label: text" → bold label. Anything without a short label stays as-is. */
+const split = (line: string) => {
+  const i = line.indexOf(": ");
+  return i > 0 && i < 36
+    ? { label: line.slice(0, i), text: line.slice(i + 2) }
+    : { label: "", text: line };
+};
+---
+
+<ol class="jobs">
+  {
+    history.map((job, i) => (
+      <li class="job reveal">
+        <div class="job__meta">
+          <span class:list={["status", i === 0 && "status--live"]}>
+            {i === 0 ? "Running" : "Completed"}
+          </span>
+          <span class="job__dates">
+            {job.startDate} → {job.endDate}
+          </span>
+        </div>
+        <div class="job__main">
+          <h3 class="job__org">{job.organisation}</h3>
+          <p class="job__role">{job.role}</p>
+          {detailed && (
+            <ul class="job__list">
+              {job.experiences.map((line) => {
+                const { label, text } = split(line);
+                return (
+                  <li>
+                    {label && <strong>{label}.</strong>} {text}
+                  </li>
+                );
+              })}
+            </ul>
+          )}
+        </div>
+      </li>
+    ))
+  }
+</ol>
+
+<style>
+  .jobs {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .job {
+    display: grid;
+    grid-template-columns: 13rem minmax(0, 1fr);
+    gap: var(--space-4) var(--space-8);
+    padding-block: var(--space-8);
+    border-bottom: var(--rule-width) solid var(--color-rule);
+  }
+
+  .job__meta {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .job__dates {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--color-fg-muted);
+  }
+
+  .job__org {
+    font-size: var(--text-xl);
+    transition: transform var(--duration-base) var(--ease-out);
+  }
+
+  .job:hover .job__org {
+    transform: translateX(6px);
+    color: var(--color-accent);
+  }
+
+  .job__role {
+    margin-top: var(--space-2);
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--color-fg-muted);
+  }
+
+  .job__list {
+    margin: var(--space-6) 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: var(--space-3);
+  }
+
+  .job__list li {
+    position: relative;
+    padding-left: var(--space-6);
+    color: var(--color-fg-muted);
+  }
+
+  .job__list strong {
+    font-weight: 600;
+    color: var(--color-fg);
+  }
+
+  .job__list li::before {
+    content: "›";
+    position: absolute;
+    left: 0;
+    font-family: var(--font-mono);
+    color: var(--color-accent);
+  }
+
+  @media (max-width: 40rem) {
+    .job {
+      grid-template-columns: 1fr;
+    }
+
+    .job__meta {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+</style>

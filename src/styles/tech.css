@@ -1,0 +1,197 @@
+/*
+ * Tech layer — shared pieces for the portfolio pages: terminal windows,
+ * key/value readouts, chips and status dots. Built on the Sumi tokens.
+ */
+
+.term {
+  border: var(--rule-width) solid var(--color-rule-strong);
+  border-radius: 6px;
+  background: var(--color-bg-raised);
+  overflow: hidden;
+}
+
+.term__bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  border-bottom: var(--rule-width) solid var(--color-rule);
+  background: var(--color-bg-subtle);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  color: var(--color-fg-faint);
+}
+
+.term__dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--color-rule-strong);
+}
+
+.term__dot:first-child {
+  background: var(--color-accent);
+}
+
+.term__title {
+  margin-left: var(--space-2);
+}
+
+.term__body {
+  padding: var(--space-6);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+}
+
+.prompt::before {
+  content: "$ ";
+  color: var(--color-accent);
+}
+
+.cursor {
+  display: inline-block;
+  width: 0.55em;
+  height: 1.05em;
+  margin-left: 2px;
+  vertical-align: -0.17em;
+  background: var(--color-accent);
+  animation: blink 1.1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.kv {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: var(--space-2) var(--space-6);
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+}
+
+.kv dt {
+  color: var(--color-accent);
+}
+
+.kv dd {
+  margin: 0;
+  color: var(--color-fg-muted);
+}
+
+.chip {
+  display: inline-block;
+  padding: 0.15rem 0.6rem;
+  border: var(--rule-width) solid var(--color-rule-strong);
+  border-radius: var(--radius);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.04em;
+  color: var(--color-fg-muted);
+  transition:
+    color var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out),
+    background var(--duration-fast) var(--ease-out);
+}
+
+.chip:hover {
+  color: var(--color-accent-fg);
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-fg-faint);
+}
+
+.status::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-fg-faint);
+}
+
+.status--live {
+  color: var(--color-fg-muted);
+}
+
+.status--live::before {
+  background: #2f9e6b;
+  box-shadow: 0 0 0 0 rgba(47, 158, 107, 0.6);
+  animation: ping 2s infinite;
+}
+
+@keyframes ping {
+  70% {
+    box-shadow: 0 0 0 7px rgba(47, 158, 107, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(47, 158, 107, 0);
+  }
+}
+
+.btn {
+  display: inline-block;
+  padding: var(--space-3) var(--space-6);
+  border: var(--rule-width) solid var(--color-accent);
+  border-radius: var(--radius);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--color-accent);
+  transition:
+    background var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out);
+}
+
+.btn:hover {
+  background: var(--color-accent);
+  color: var(--color-accent-fg);
+}
+
+.btn--ghost {
+  border-color: var(--color-rule-strong);
+  color: var(--color-fg-muted);
+}
+
+.btn--ghost:hover {
+  border-color: var(--color-accent);
+}
+
+/* Scroll-in reveal, enabled by the script in BaseLayout. */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.8s var(--ease-out),
+    transform 0.8s var(--ease-out);
+}
+
+.js .reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
