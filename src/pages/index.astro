@@ -127,14 +127,6 @@ const stats = [
     <JobList detailed />
   </section>
 
-  {
-    INK.divider && (
-      <FluidInk variant="divider" strength={INK.strength * 0.7}>
-        <p class="divider__label label">$ terraform apply — ink and infrastructure</p>
-      </FluidInk>
-    )
-  }
-
   <section id="stack" class="section wrap">
     <SectionHead index="03" title="Stack" />
     <div class="gap"><Stack /></div>
@@ -393,10 +385,6 @@ const stats = [
 
 
 
-  .divider__label {
-    margin: auto;
-    text-align: center;
-  }
 
   .contact {
     text-align: center;

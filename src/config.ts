@@ -68,7 +68,7 @@ export const INK = {
   /** Full-bleed ink behind the hero. */
   hero: true,
   /** Narrow ink band used as a section transition. */
-  divider: true,
+  divider: false,
   /** Density of each ink splat. Sensible range is 0.3 – 2.5. */
   strength: 1,
   /** Let the ink drift on its own instead of only reacting to the cursor. */
