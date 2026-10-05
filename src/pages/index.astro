@@ -7,8 +7,6 @@ import SectionHead from "../components/SectionHead.astro";
 import Publications from "../components/Publications.astro";
 import Certs from "../components/Certs.astro";
 import Stack from "../components/Stack.astro";
-import DevopsLoop from "../components/DevopsLoop.astro";
-import PipelineStrip from "../components/PipelineStrip.astro";
 import DevDesk from "../components/DevDesk.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import profile from "../assets/profile.jpeg";
@@ -129,22 +127,6 @@ const stats = [
     <JobList detailed />
   </section>
 
-  <section id="how-i-ship" class="section wrap">
-    <SectionHead index="03" title="How I ship" />
-    <div class="ship">
-      <p class="lede ship__lede">
-        Everything I build runs the same loop: plan, code, build, test, release,
-        deploy, operate, monitor — automated end to end, observable at every
-        step, and tuned for cost.
-      </p>
-      <div class="reveal"><DevopsLoop /></div>
-      <div class="reveal ship__pipe">
-        <p class="label ship__cap">$ cat .github/workflows/deploy.yml</p>
-        <PipelineStrip />
-      </div>
-    </div>
-  </section>
-
   {
     INK.divider && (
       <FluidInk variant="divider" strength={INK.strength * 0.7}>
@@ -154,17 +136,17 @@ const stats = [
   }
 
   <section id="stack" class="section wrap">
-    <SectionHead index="04" title="Stack" />
+    <SectionHead index="03" title="Stack" />
     <div class="gap"><Stack /></div>
   </section>
 
   <section id="certifications" class="section wrap">
-    <SectionHead index="05" title="Certifications" />
+    <SectionHead index="04" title="Certifications" />
     <div class="gap"><Certs /></div>
   </section>
 
   <section id="research" class="section wrap">
-    <SectionHead index="06" title="Research" />
+    <SectionHead index="05" title="Research" />
     <p class="lede research__lede">
       Deep and federated learning for medical imaging, plus applied ML for power
       systems and NLP.
@@ -408,19 +390,8 @@ const stats = [
     padding-top: var(--space-8);
   }
 
-  .ship {
-    display: grid;
-    gap: var(--space-8);
-    padding-top: var(--space-8);
-  }
 
-  .ship__lede {
-    max-width: var(--width-prose);
-  }
 
-  .ship__cap {
-    margin-bottom: var(--space-4);
-  }
 
   .divider__label {
     margin: auto;
